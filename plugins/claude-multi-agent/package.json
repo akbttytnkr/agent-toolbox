@@ -1,0 +1,41 @@
+{
+  "name": "@akbttytnkr/claude-multi-agent",
+  "version": "0.3.0",
+  "description": "Multi-agent orchestration plugin for Claude Code. Enables parallel specialist agents coordinated by PM/Director roles.",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akbttytnkr/claude-multi-agent.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "plugin",
+    "multi-agent",
+    "orchestration",
+    "tmux",
+    "automation"
+  ],
+  "files": [
+    ".claude-plugin/",
+    "agents/",
+    "skills/",
+    "hooks/",
+    "scripts/",
+    "rules/"
+  ],
+  "scripts": {
+    "start": "bun src/main.ts",
+    "orchestrate": "bun src/start.ts",
+    "team": "bun src/team-start.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.2.66"
+  }
+}

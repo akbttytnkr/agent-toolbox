@@ -1,0 +1,17 @@
+{
+  "name": "claude-multi-agent",
+  "version": "0.1.0",
+  "description": "Multi-agent orchestration system for Claude Code. Enables parallel specialist agents (SE, frontend, backend, tester, etc.) coordinated by PM/Director roles.",
+  "author": {
+    "name": "akaba",
+    "url": "https://github.com/akbttytnkr/claude-multi-agent"
+  },
+  "repository": "https://github.com/akbttytnkr/claude-multi-agent",
+  "license": "MIT",
+  "keywords": [
+    "multi-agent",
+    "orchestration",
+    "tmux",
+    "automation"
+  ]
+}

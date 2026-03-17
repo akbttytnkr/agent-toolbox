@@ -5,5 +5,12 @@
   },
   "description": "複数のClaude Codeプラグインを管理するマーケットプレイス",
   "strict": true,
-  "plugins": []
+  "plugins": [
+    {
+      "name": "claude-multi-agent",
+      "source": "./plugins/claude-multi-agent",
+      "description": "Multi-agent orchestration system for Claude Code. Enables parallel specialist agents coordinated by PM/Director roles.",
+      "version": "0.1.0"
+    }
+  ]
 }
