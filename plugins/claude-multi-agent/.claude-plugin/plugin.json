@@ -1,5 +1,5 @@
 {
-  "name": "multi-agent",
+  "name": "claude-multi-agent",
   "version": "0.1.0",
   "description": "Multi-agent orchestration system for Claude Code. Enables parallel specialist agents (SE, frontend, backend, tester, etc.) coordinated by PM/Director roles.",
   "author": {

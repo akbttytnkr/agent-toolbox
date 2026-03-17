@@ -9,8 +9,8 @@ Claude Code のスキル・エージェント機能を活用したマルチエ�
 
 | コマンド | モード | 特徴 | 用途 |
 |---------|--------|------|------|
-| `/analyze` | マルチエージェント分析 | Agent ツールで専門エージェントを委任・並列実行 | 単発分析、設計検討 |
-| `/orchestrate` | オーケストレーション | フェーズ分解、計画ボード→実行ボードの2段階 | 大規模プロジェクト |
+| `/claude-multi-agent:analyze` | マルチエージェント分析 | Agent ツールで専門エージェントを委任・並列実行 | 単発分析、設計検討 |
+| `/claude-multi-agent:orchestrate` | オーケストレーション | フェーズ分解、計画ボード→実行ボードの2段階 | 大規模プロジェクト |
 
 ### /analyze — マルチエージェント分析モード
 
@@ -201,16 +201,16 @@ security_red: [レビュー] 防御策提案      <- 自動生成
 ターミナルで以下を実行：
 
 ```bash
-claude plugin marketplace add akbttytnkr/claude-multi-agent
+claude plugin marketplace add akbttytnkr/agent-toolbox
 ```
 
 #### 2. プラグインのインストール
 
 ```bash
-claude plugin install claude-multi-agent
+claude plugin install claude-multi-agent@agent-toolbox
 ```
 
-これで `/analyze`, `/orchestrate` のスラッシュコマンドと全エージェントが利用可能になる。
+これで `/claude-multi-agent:analyze`, `/claude-multi-agent:orchestrate` のスラッシュコマンドと全エージェントが利用可能になる。
 
 #### 3. `/orchestrate` を使う場合（追加セットアップ）
 
@@ -230,17 +230,17 @@ claude
 
 ```bash
 # マーケットプレースのキャッシュを最新化
-claude plugin marketplace update claude-multi-agent
+claude plugin marketplace update agent-toolbox
 
 # プラグインを更新
-claude plugin update claude-multi-agent
+claude plugin update claude-multi-agent@agent-toolbox
 ```
 
 ### アンインストール
 
 ```bash
-claude plugin uninstall claude-multi-agent
-claude plugin marketplace remove claude-multi-agent
+claude plugin uninstall claude-multi-agent@agent-toolbox
+claude plugin marketplace remove agent-toolbox
 ```
 
 ## セーフガード
@@ -286,14 +286,13 @@ claude-multi-agent/
 │   └── debate-pane.ts       # tmux ペイン用討論スクリプト
 ├── .claude-plugin/
 │   ├── plugin.json          # プラグインマニフェスト
-│   └── marketplace.json     # マーケットプレイス定義
 ├── .claude/
 │   ├── CLAUDE.md            # プロジェクトルール
 │   └── settings.json        # 権限設定
 ├── agents/                  # Claude Code エージェント定義（10ロール）
 ├── skills/
-│   ├── analyze/             # /analyze スラッシュコマンド
-│   └── orchestrate/         # /orchestrate スラッシュコマンド
+│   ├── analyze/             # /claude-multi-agent:analyze スラッシュコマンド
+│   └── orchestrate/         # /claude-multi-agent:orchestrate スラッシュコマンド
 ├── hooks/
 │   └── hooks.json           # フック定義
 ├── scripts/                 # フックスクリプト（restrict-*, post-edit-*）
