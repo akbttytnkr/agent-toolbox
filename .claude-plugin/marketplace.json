@@ -11,6 +11,12 @@
       "source": "./plugins/claude-multi-agent",
       "description": "Multi-agent orchestration system for Claude Code. Enables parallel specialist agents coordinated by PM/Director roles.",
       "version": "0.1.0"
+    },
+    {
+      "name": "coding-rules",
+      "source": "./plugins/coding-rules",
+      "description": "言語別コーディングルール集（日英対応）。common + TypeScript, Python, Go",
+      "version": "0.1.0"
     }
   ]
 }
