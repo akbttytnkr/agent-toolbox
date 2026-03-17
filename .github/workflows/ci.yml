@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [develop, main]
+  push:
+    branches: [develop, main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  plugin-validate:
+    name: Plugin Validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Validate plugins
+        run: |
+          for plugin_dir in plugins/*/; do
+            if [ -f "${plugin_dir}.claude-plugin/plugin.json" ]; then
+              echo "::group::Validating ${plugin_dir}"
+              claude plugin validate "${plugin_dir}"
+              echo "::endgroup::"
+            fi
+          done
+
+  typecheck:
+    name: TypeScript Typecheck
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      matrix:
+        plugin:
+          - claude-multi-agent
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        working-directory: plugins/${{ matrix.plugin }}
+        run: bun install --frozen-lockfile
+
+      - name: Typecheck
+        working-directory: plugins/${{ matrix.plugin }}
+        run: bun run typecheck
