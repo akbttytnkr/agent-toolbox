@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bun src/team-start.ts *)",
+      "Bash(BOARD=$(bun src/team-start.ts init)*)",
+      "Bash(*bun src/team-start.ts*)",
+      "Bash(*team-start.ts*)",
+      "Bash(*$BOARD*)",
+      "Bash(*orchestra-*)",
+      "Bash(*$PROJECT*)",
+      "Bash(*project-*)",
+      "Bash(*$PLAN_BOARD*)",
+      "Bash(*$EXEC_BOARD*)",
+      "Bash(PLAN_BOARD=*)",
+      "Bash(EXEC_BOARD=*)",
+      "Bash(PLAN_BOARD=$(bun src/*)*)",
+      "Bash(EXEC_BOARD=$(bun src/*)*)",
+      "Bash(bun src/*)",
+      "Bash(for *)",
+      "Read(*)",
+      "Read(!**/.env*)",
+      "Read(!**/credentials*)",
+      "Read(!**/secrets*)",
+      "Read(!**/*.key)",
+      "Read(!**/*.pem)",
+      "Read(!**/*.p12)",
+      "Read(!**/*.pfx)",
+      "Read(!**/*.cert)",
+      "Read(!**/*.crt)",
+      "Read(!**/id_rsa*)",
+      "Read(!**/id_ed25519*)",
+      "Read(!**/.npmrc)",
+      "Read(!**/*.token)",
+      "Read(!**/.ssh/**)",
+      "Read(!**/.aws/**)",
+      "Read(!**/.kube/config)",
+      "Read(!**/.docker/config.json)"
+    ]
+  }
+}

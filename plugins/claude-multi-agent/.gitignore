@@ -1,0 +1,9 @@
+node_modules/
+feedback/
+logs/
+/tmp/
+*.tsbuildinfo
+.env
+.env.local
+.orchestra-shared/
+.learned/

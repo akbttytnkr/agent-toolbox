@@ -1,0 +1,40 @@
+# 機密情報・シークレット
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+**/credentials.json
+**/secrets.json
+**/*secret*
+**/*credential*
+.npmrc
+.yarnrc.yml
+.pypirc
+
+# 依存パッケージ
+node_modules/
+
+# ビルド成果物・一時ファイル
+dist/
+*.log
+
+# オーケストレーション基盤（ワーカーが読み書きしないファイル）
+src/sdk-logger.ts
+src/claude-sdk.ts
+src/claude-cli.ts
+src/claude-cli.legacy.ts
+src/team-member.ts
+src/team-board.ts
+src/worker.ts
+src/worker-pane.ts
+src/debate-pane.ts
+src/main.ts
+src/start.ts
+src/team-start.ts
+
+# 設定・フックファイル
+.claude/

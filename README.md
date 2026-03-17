@@ -1,4 +1,4 @@
-# claude-plugins
+# agent-toolbox
 
 複数のClaude Codeプラグインを管理するマーケットプレイスリポジトリ。
 
@@ -22,13 +22,13 @@ plugins/
 ### マーケットプレイスの登録
 
 ```bash
-claude plugin marketplace add https://github.com/akbttytnkr/claude-plugins
+claude plugin marketplace add akbttytnkr/agent-toolbox
 ```
 
 ### プラグインのインストール
 
 ```bash
-claude plugin install <plugin-name>@claude-plugins --scope user
+claude plugin install <plugin-name>@agent-toolbox --scope user
 ```
 
 ## プラグインの追加
