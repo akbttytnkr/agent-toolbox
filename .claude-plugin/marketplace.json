@@ -1,0 +1,9 @@
+{
+  "name": "claude-plugins",
+  "owner": {
+    "name": "akbttytnkr"
+  },
+  "description": "複数のClaude Codeプラグインを管理するマーケットプレイス",
+  "strict": true,
+  "plugins": []
+}
